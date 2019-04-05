@@ -1,17 +1,15 @@
 # Development Approach
 
-Finally managed to put in the extra 2 hours to sort the test out Brett.
-
 Please use this Github link to see the code, unit tests and e2e tests -  https://github.com/coreyhub/SearchPitches
-Please use this url to see the functionality - https://coreyhub.github.io/SearchPitches/search
-
-I have attached Search Pitches Wireframe.pdf to this email which shows a quick represent of how I broke down the component. 
+Please use this url to see the live functionality - https://coreyhub.github.io/SearchPitches/search
+ 
 First there is app component which is the outer most component, and within that is the search and search details component.
 I could have also done a search results component to separate further.
 
 In additions, I have used Reactive forms as I wanted to follow a model driven and immutability approach to manage the state of the form. This is also great for testing since the data is meant to be consistent and predictable when requested using Observables. 
 
-By using the Angular Style guide created by John Papa, I wanted demonstrated awareness of best practices, coding standards and producing easily readable code 
+By using the Angular Style guide created by John Papa, I wanted demonstrated awareness of best practices, coding standards and producing easily readable code.
+
 Also, I have used BEM convention for writing CSS. As well, the use of Tslint was to check the Typescript code quality and Prettier was also used to allow for consistent code style throughout development.
 I have followed TDD approach, where I wrote initial tests which failed and then I wrote a simple test for it to past and then I refactored the functional code further.
 
@@ -22,7 +20,7 @@ This was due to fact that i could use this the filter starts and ends for the in
 The intention was to build modular, reusable, maintainable, readable and scalable code within the give 2-4 hours.
 
 I have highlighted in the code further test that could have been done, given more time. Another functional component
-could have been the filter component, where the user could filter the pitch slots by price and availability. This still needs development. Thank you.
+could have been the filter component, where the user could filter the pitch slots by price and availability. This still needs development.
 
 # SearchPitches
 

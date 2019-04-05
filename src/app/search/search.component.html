@@ -1,0 +1,103 @@
+<form
+  [formGroup]="searchPitchesForm"
+  (ngSubmit)="onSubmit()"
+  class="search-pitches__form"
+>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-form-field>
+      <input
+        matInput
+        [min]="dateNow"
+        [matDatepicker]="dateFromPicker"
+        placeholder="Date from"
+        [formControl]="searchPitchesForm.controls['dateFrom']"
+        (dateInput)="inputDateFrom($event)"
+        class="search-pitches__input-date-from"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="dateFromPicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #dateFromPicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        [min]="dateFromValue"
+        [matDatepicker]="dateToPicker"
+        placeholder="Date to"
+        [formControl]="searchPitchesForm.controls['dateTo']"
+        class="search-pitches__input-date-to"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="dateToPicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #dateToPicker></mat-datepicker>
+    </mat-form-field>
+  </mat-grid-list>
+
+  <mat-error
+    *ngIf="
+      !searchPitchesForm.controls['dateFrom'].valid &&
+      searchPitchesForm.controls['dateFrom'].touched
+    "
+  >
+    Date from is invalid
+  </mat-error>
+  <mat-error
+    *ngIf="
+      !searchPitchesForm.controls['dateTo'].valid &&
+      searchPitchesForm.controls['dateFrom'].touched
+    "
+  >
+    Date to is invalid
+  </mat-error>
+  <button
+    [disabled]="
+      !searchPitchesForm.controls['dateFrom'].valid ||
+      !searchPitchesForm.controls['dateTo'].valid
+    "
+    mat-stroked-button
+    class="search-pitches__submit"
+  >
+    Search
+  </button>
+  <div>{{ errorEvent }}</div>
+</form>
+
+<div class="search-results">
+  <div *ngIf="slotList">
+    <div *ngIf="!slotList.length">No results for the chosen dates</div>
+
+    <div class="search-results__count" *ngIf="slotList.length">
+      There are {{ slotList.length }} slots
+    </div>
+    <div class="search-results__filter" *ngIf="slotList.length">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <select matNativeControl>
+          <option value="--select">-- Select filter --</option>
+          <option value="price">Price</option>
+          <option value="availability">Availability</option>
+        </select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="search-results__row" *ngFor="let slot of slotList">
+    Slot id - {{ slot.id }}
+    <a
+      class="search-results__details"
+      [routerLink]="['/search', slot.id]"
+      [queryParams]="{
+        starts: slot.attributes.starts,
+        ends: slot.attributes.ends,
+        price: slot.attributes.price,
+        availabilities: slot.attributes.availabilities
+      }"
+    >
+      View Details
+    </a>
+  </div>
+</div>

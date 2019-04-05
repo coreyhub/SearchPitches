@@ -1,0 +1,117 @@
+mat-form-field {
+  margin-right: 12px;
+}
+
+.search-results {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.search-results__row {
+  width: 23%;
+  float: left;
+  border: 1px solid;
+  padding: 15px 0px 15px 0px;
+  margin: 20px 10px 0px 10px;
+  border-radius: 4px;
+}
+
+.search-results__count {
+  text-align: left;
+  margin: 0 10px;
+  float: left;
+}
+
+.search-results__filter {
+  text-align: right;
+  margin: 0 50px;
+}
+
+.search-results__details {
+  display: block;
+  margin: 15px auto;
+  cursor: pointer;
+}
+.search-pitches__submit {
+  width: 35%;
+}
+
+@media (min-width: 320px) {
+  .search-results__row {
+    width: 95%;
+    margin: 20px 11px 0px 12px;
+  }
+
+  .search-pitches__submit {
+    width: 95%;
+  }
+
+  .search-results__count {
+    text-align: center;
+    margin: 0 10px;
+    float: none;
+  }
+  .search-results__filter {
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) {
+  .search-results__row {
+    width: 95%;
+    margin: 20px 11px 0px 12px;
+  }
+
+  .search-results__count {
+    text-align: left;
+    margin: 0 10px;
+    float: none;
+  }
+  .search-results__filter[_ngcontent-c1] {
+    text-align: right;
+  }
+  .search-pitches__submit {
+    width: 72%;
+  }
+}
+@media (min-width: 641px) {
+  .search-results__row {
+    width: 45%;
+    margin: 20px 15px 0px 15px;
+  }
+  .search-results__count {
+    text-align: left;
+    margin: 0 10px;
+    float: left;
+  }
+  .search-results__filter[_ngcontent-c1] {
+    text-align: right;
+  }
+  .search-pitches__submit {
+    width: 45%;
+  }
+}
+@media (min-width: 961px) {
+  .search-results__row {
+    width: 30%;
+    margin: 20px 11px 0px 12px;
+  }
+  .search-pitches__submit {
+    width: 35%;
+  }
+}
+@media (min-width: 1025px) {
+  .search-results__row {
+    width: 30%;
+    margin: 20px 11px 0px 12px;
+  }
+}
+@media (min-width: 1281px) {
+  .search-results__row {
+    width: 22%;
+    margin: 20px 12px 0px 12px;
+  }
+  .search-pitches__submit {
+    width: 35%;
+  }
+}

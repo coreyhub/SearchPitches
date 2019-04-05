@@ -1,0 +1,10 @@
+<div class="search-details">
+  <div *ngIf="id">
+    <h1>{{ id }}</h1>
+    <div>Price - {{ price }}</div>
+    <div>Availability - {{ availabilities }}</div>
+    <div>
+      <a href class="search-details__back" (click)="back()">Back</a>
+    </div>
+  </div>
+</div>
